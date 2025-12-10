@@ -19,6 +19,11 @@ fun <T> runSequenceExample(
     println("Finished")
 }
 
+/**
+ * The sequence builder should not use suspending operations other than `yielding operations`. E.g.,
+ * to fetch data it's better to use `Flow`. The way its builder works is similar to the sequence
+ * builder, but Flow has support for other coroutine features.
+ */
 private fun <T> initialSequenceExample(triple: Triple<T, T, T>) {
     val (x, y, z) = triple
     val seq = sequence {
