@@ -26,3 +26,18 @@ fun createRandomNumbers(repetitions: Int, seed: Long = System.currentTimeMillis(
     }
     seq.forEach(::println)
 }
+
+fun createRandomStrings(repetitions: Int, length: Int, seed: Long = System.currentTimeMillis()) {
+    val seq = sequence {
+        val random = Random(seed)
+        val charPool = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+        repeat(repetitions) {
+            val randomString = (1..length)
+                .map { i -> random.nextInt(charPool.size) }
+                .map(charPool::get)
+                .joinToString("")
+            yield(randomString)
+        }
+    }
+    seq.forEach(::println)
+}

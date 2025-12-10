@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import com.buchwald.kotlincoroutines.chapters.SequenceExampleType
 import com.buchwald.kotlincoroutines.chapters.createFibonacciSequence
 import com.buchwald.kotlincoroutines.chapters.createRandomNumbers
+import com.buchwald.kotlincoroutines.chapters.createRandomStrings
 import com.buchwald.kotlincoroutines.chapters.runSequenceExample
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +16,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         // Sequence Builder Use Cases
         // createFibonacciSequence(10)
-        createRandomNumbers(10)
+        // createRandomNumbers(10)
+        createRandomStrings(10, 15)
 
         // Sequence Builder
         /*runSequenceExample(Triple("first", "second", "third"), SequenceExampleType.INITIAL)
