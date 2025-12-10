@@ -17,7 +17,10 @@ fun createFibonacciSequence(count: Int) {
     println(fibonacci.take(count).toList())
 }
 
-fun createRandomNumbers(repetitions: Int, seed: Long = System.currentTimeMillis()) {
+fun createRandomNumbers(
+    repetitions: Int = 10,
+    seed: Long = System.currentTimeMillis(),
+) {
     val seq = sequence {
         val random = Random(seed)
         repeat(repetitions) {
@@ -27,7 +30,11 @@ fun createRandomNumbers(repetitions: Int, seed: Long = System.currentTimeMillis(
     seq.forEach(::println)
 }
 
-fun createRandomStrings(repetitions: Int, length: Int, seed: Long = System.currentTimeMillis()) {
+fun createRandomStrings(
+    repetitions: Int = 10,
+    length: Int = 24,
+    seed: Long = System.currentTimeMillis(),
+) {
     val seq = sequence {
         val random = Random(seed)
         val charPool = ('a'..'z') + ('A'..'Z') + ('0'..'9')

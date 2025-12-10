@@ -8,7 +8,7 @@ enum class SequenceExampleType {
 
 fun <T> runSequenceExample(
     triple: Triple<T, T, T>,
-    type: SequenceExampleType
+    type: SequenceExampleType,
 ) {
     println("Initialising")
     when (type) {
