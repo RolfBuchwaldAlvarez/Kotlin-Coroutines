@@ -1,6 +1,7 @@
 package com.buchwald.kotlincoroutines.chapters
 
 import java.math.BigInteger
+import kotlin.random.Random
 
 fun createFibonacciSequence(count: Int) {
     val fibonacci = sequence {
@@ -14,4 +15,14 @@ fun createFibonacciSequence(count: Int) {
         }
     }
     println(fibonacci.take(count).toList())
+}
+
+fun createRandomNumbers(repetitions: Int, seed: Long = System.currentTimeMillis()) {
+    val seq = sequence {
+        val random = Random(seed)
+        repeat(repetitions) {
+            yield(random.nextInt())
+        }
+    }
+    seq.forEach(::println)
 }
