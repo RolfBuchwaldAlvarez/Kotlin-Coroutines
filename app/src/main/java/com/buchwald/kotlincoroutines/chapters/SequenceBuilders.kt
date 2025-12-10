@@ -27,6 +27,25 @@ private fun <T> initialSequenceExample(triple: Triple<T, T, T>) {
     seq.forEach(::println)
 }
 
+/* Within the sequence, each Triple item is generated on demand, not in advance.
+* Output:
+* Starting
+* Generating first
+* The next value is 1
+* Generating second
+* The next value is 2
+* Generating third
+* The next value is 3
+* Done
+* Finished
+*
+* So, after generating each number, we jump into the loop, printing "The next value is ...". After
+* that, the code jumps back to where it was inside the sequence builder. You can compare it to a
+* video game, where you can save your progress and come back later to go on from where you stopped.
+* This is called "resuming" the game. With sequences, this would be impossible without a suspension
+* mechanism, as it wouldn't be possible to stop a function in the middle of execution and resume it
+* from the exact same point in the future. But this can be done here thanks to suspension.
+ */
 private fun <T> sequenceExampleWithPrints(triple: Triple<T, T, T>) {
     val seq = sequence {
         val (x, y, z) = triple
@@ -38,5 +57,7 @@ private fun <T> sequenceExampleWithPrints(triple: Triple<T, T, T>) {
         yield(z)
         println("Done")
     }
-    seq.forEach(::println)
+    seq.forEach {
+        println("The next value is $it")
+    }
 }
