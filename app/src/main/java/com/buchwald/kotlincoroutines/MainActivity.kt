@@ -15,9 +15,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         // Sequence Builder Use Cases
-        // createFibonacciSequence()
-        // createRandomNumbers()
-        createRandomStrings()
+        /*createFibonacciSequence()
+        createRandomNumbers()
+        createRandomStrings()*/
 
         // Sequence Builder
         /*runSequenceExample(Triple("first", "second", "third"), SequenceExampleType.INITIAL)

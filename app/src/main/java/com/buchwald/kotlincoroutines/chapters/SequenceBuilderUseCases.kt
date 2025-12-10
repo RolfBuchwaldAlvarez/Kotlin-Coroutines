@@ -3,7 +3,7 @@ package com.buchwald.kotlincoroutines.chapters
 import java.math.BigInteger
 import kotlin.random.Random
 
-fun createFibonacciSequence(count: Int) {
+fun createFibonacciSequence(count: Int = 10) {
     val fibonacci = sequence {
         var first = BigInteger.ZERO
         var second = BigInteger.ONE
