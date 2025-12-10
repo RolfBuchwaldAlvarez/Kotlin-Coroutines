@@ -14,6 +14,7 @@ class MainActivity : ComponentActivity() {
 
         runSequenceExample(Triple("first", "second", "third"), SequenceExampleType.INITIAL)
         runSequenceExample(Triple(1, 2, 3), SequenceExampleType.WITH_PRINTS)
+        runSequenceExample(Triple(1, 2, 3), SequenceExampleType.MANUEL_VALUE_GETTERS)
 
         setContent {}
     }
